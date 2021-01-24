@@ -13,6 +13,7 @@
 		B53D95B125B6C2AE009BE2D6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B53D95B025B6C2AE009BE2D6 /* Assets.xcassets */; };
 		B53D95B425B6C2AE009BE2D6 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B53D95B325B6C2AE009BE2D6 /* Preview Assets.xcassets */; };
 		B53D95B725B6C2AE009BE2D6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B53D95B525B6C2AE009BE2D6 /* LaunchScreen.storyboard */; };
+		B53D95C025B6C369009BE2D6 /* OtherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53D95BF25B6C369009BE2D6 /* OtherView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		B53D95B325B6C2AE009BE2D6 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		B53D95B625B6C2AE009BE2D6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B53D95B825B6C2AE009BE2D6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B53D95BF25B6C369009BE2D6 /* OtherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 				B53D95AA25B6C2AD009BE2D6 /* AppDelegate.swift */,
 				B53D95AC25B6C2AD009BE2D6 /* SceneDelegate.swift */,
 				B53D95AE25B6C2AD009BE2D6 /* ContentView.swift */,
+				B53D95BF25B6C369009BE2D6 /* OtherView.swift */,
 				B53D95B025B6C2AE009BE2D6 /* Assets.xcassets */,
 				B53D95B525B6C2AE009BE2D6 /* LaunchScreen.storyboard */,
 				B53D95B825B6C2AE009BE2D6 /* Info.plist */,
@@ -148,6 +151,7 @@
 				B53D95AB25B6C2AD009BE2D6 /* AppDelegate.swift in Sources */,
 				B53D95AD25B6C2AD009BE2D6 /* SceneDelegate.swift in Sources */,
 				B53D95AF25B6C2AD009BE2D6 /* ContentView.swift in Sources */,
+				B53D95C025B6C369009BE2D6 /* OtherView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
