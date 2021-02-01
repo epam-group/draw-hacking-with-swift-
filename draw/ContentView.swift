@@ -48,42 +48,73 @@ struct textModifier: ViewModifier {
             .font(.title2)
     }
 }
+struct buttonModifier: ViewModifier {
+    func body(content: Content) -> some View {
+        content
+            .frame(width: 200, height: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+            .background(Color.white)
+            .font(.title)
+    }
+}
 extension View {
     func whiteBigText() -> some View {
         self.modifier(textModifier())
     }
 }
-
-struct ContentView: View {
-    @State private var petalOffset = Double.random(in: -40.0...40.0)
-        @State private var petalWidth = 50.0
-    var body: some View {
-        VStack {
-                    Flower(petalOffset: petalOffset, petalWidth: petalWidth)
-                        .fill(Color.yellow, style: FillStyle(eoFill: true))
-
-                    Text("Offset")
-                        .colorInvert()
-                        .font(.title2)
-                    Slider(value: $petalOffset, in: -40...40)
-                        .padding([.horizontal, .bottom])
-                        
-
-                    Text("Width")
-                        //this
-                        .whiteBigText()
-                    Slider(value: $petalWidth, in: 0...100)
-                        //and this are simillar
-                        .padding(.horizontal)
-                        .padding(.bottom)
-                }
-        .background(Color.black)
-        .edgesIgnoringSafeArea(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
+extension NavigationLink {
+    func classicBigButton() -> some View {
+        self.modifier(buttonModifier())
     }
 }
 
+struct ColorCyclingCircle: View {
+    var amount = 0.0
+    var steps = 100
+
+    var body: some View {
+        ZStack {
+            ForEach(0..<steps) { value in
+                Circle()
+                    .inset(by: CGFloat(value))
+                    .strokeBorder(self.color(for: value, brightness: 1), lineWidth: 2)
+            }
+        }
+    }
+
+    func color(for value: Int, brightness: Double) -> Color {
+        var targetHue = Double(value) / Double(self.steps) + self.amount
+
+        if targetHue > 1 {
+            targetHue -= 1
+        }
+
+        return Color(hue: targetHue, saturation: 1, brightness: brightness)
+    }
+}
+struct ContentView: View {
+    
+    var body: some View {
+        ZStack{
+            ZStack{
+                Image("keqing")
+                    .frame(minWidth: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/, idealWidth: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, minHeight: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/, idealHeight: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, maxHeight: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                Rectangle()
+                    .fill(Color.yellow)
+                    .blendMode(.multiply)
+                    .edgesIgnoringSafeArea(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
+            }
+            VStack(spacing: 30){
+                Text("Ke Qing")
+                    .font(.title)
+                    .background(Color.white)
+                Spacer()
+            }
+        }
+        
+    }
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
     }
+}
 }
