@@ -47,9 +47,21 @@ struct chess: View {
     @State private var row = 8
     @State private var column = 8
     var body: some View {
+        VStack{
         chessBoard(rows: row, columns: column)
             .padding(20)
             .frame(maxWidth: .infinity, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+            .onTapGesture {
+                self.row+=1
+                self.column+=1
+            }
+        Button(action: {
+            self.row = 8
+            self.column = 8
+        }){
+            Text("Reset")
+        }
+        }
     }
 }
 
